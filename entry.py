@@ -32,6 +32,7 @@ if __name__ == '__main__':
         m_data = merchants_bank.get_promotions()
         save_html = ''
         for item in m_data:
+            # print item
             save_html += html_temp % (item.get('type')+'.jpg', item.get('url'), item.get('title'), item.get('date'))
         f = open('html/merchants_bank.html', 'w')
         html_final = html_t % ('active','','', '招商银行信用卡中心',save_html.encode('utf-8'))
@@ -43,6 +44,7 @@ if __name__ == '__main__':
         spd_data = spd_bank.get_promotions()
         save_html = ''
         for item in spd_data:
+            # print item
             save_html += html_temp % (item.get('type')+'.png', item.get('url'), item.get('title'), item.get('date'))
         f = open('html/spd_bank.html', 'w')
         html_final = html_t % ('', 'active', '', '浦发银行信用卡中心', save_html.encode('utf-8'))
